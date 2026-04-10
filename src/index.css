@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #070709;
+    color: #d4d4d8;
+    font-family: 'Syne', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: #0e0e11; }
+  ::-webkit-scrollbar-thumb { background: #2a2a35; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #3d3d4e; }
+  textarea, input, select {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .tool-textarea {
+    @apply w-full bg-base-850 border border-base-600 rounded-lg p-3 text-sm font-mono text-zinc-300
+           resize-none focus:outline-none focus:border-lime-400 focus:ring-1 focus:ring-lime-400/20
+           placeholder:text-zinc-600 transition-colors;
+  }
+  .tool-input {
+    @apply w-full bg-base-850 border border-base-600 rounded-lg px-3 py-2 text-sm font-mono text-zinc-300
+           focus:outline-none focus:border-lime-400 focus:ring-1 focus:ring-lime-400/20
+           placeholder:text-zinc-600 transition-colors;
+  }
+  .btn-primary {
+    @apply bg-lime-400 text-base-950 font-sans font-semibold text-sm px-4 py-2 rounded-lg
+           hover:bg-lime-300 active:scale-95 transition-all cursor-pointer;
+  }
+  .btn-secondary {
+    @apply bg-base-700 border border-base-600 text-zinc-300 text-sm px-4 py-2 rounded-lg
+           hover:bg-base-600 hover:border-base-500 active:scale-95 transition-all cursor-pointer;
+  }
+  .copy-btn {
+    @apply text-xs text-zinc-500 hover:text-lime-400 font-mono transition-colors cursor-pointer px-2 py-1;
+  }
+  .output-box {
+    @apply bg-base-950 border border-base-600 rounded-lg p-4 font-mono text-sm text-zinc-300
+           overflow-auto whitespace-pre-wrap break-all min-h-[80px];
+  }
+  .section-label {
+    @apply text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2;
+  }
+  .error-box {
+    @apply bg-red-950/30 border border-red-800/50 rounded-lg p-3 text-red-400 text-sm font-mono;
+  }
+  .badge {
+    @apply text-xs font-mono px-2 py-0.5 rounded bg-base-700 border border-base-600 text-zinc-400;
+  }
+}
